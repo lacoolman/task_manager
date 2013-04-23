@@ -2,6 +2,7 @@
 namespace Core;
 
 use Core\Request\Request;
+use Core\Router\Route;
 use Core\Router\Router;
 
 class Core
@@ -16,9 +17,17 @@ class Core
     public function listen()
     {
         $route = $this->router->getRouteByPattern(self::getRequest()->get(Request::REDIRECT_URL));
+
+        $this->proceed($route);
     }
 
-    public function 
+    public function proceed(Route $route)
+    {
+        $controller = $route->getController() . 'Controller';
+        $action = $route->getAction() . 'Action';
+
+        $controller->$action();
+    }
 
     public static function getRequest()
     {

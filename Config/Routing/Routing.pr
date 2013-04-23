@@ -2,7 +2,7 @@
     "index" :
     {
         "pattern" : "/index",
-        "controller" : "Index",
+        "controller" : "Controller/Index",
         "action" : "index"
     }
 }
