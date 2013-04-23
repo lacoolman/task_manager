@@ -1,0 +1,8 @@
+{
+    "index" :
+    {
+        "pattern" : "/index",
+        "controller" : "Index",
+        "action" : "index"
+    }
+}
